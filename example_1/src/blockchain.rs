@@ -1,3 +1,4 @@
+#![allow(unused)]
 use crate::block::Block;
 use crate::errors::Result;
 const TARGET_HEXT: usize = 4;
