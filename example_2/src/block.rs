@@ -78,7 +78,7 @@ impl Block {
         let result = hasher.result_str();
 
         let mut vec1 = vec![];
-        vec1.resize(TARGET_HEXT, '1' as u8);
+        vec1.resize(TARGET_HEXT, '0' as u8);
         Ok(&result[0..TARGET_HEXT] == String::from_utf8(vec1)?)
     }
 }
