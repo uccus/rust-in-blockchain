@@ -82,7 +82,7 @@ impl BlockChain {
                             match spent_TXOs.get_mut(&i.txid) {
                                 Some(v) => {
                                     v.push(i.vout);
-                                }
+                                },
                                 None => {
                                     spent_TXOs.insert(i.txid.clone(), vec![i.vout]);
                                 }
@@ -99,7 +99,7 @@ impl BlockChain {
     pub fn find_UTXO(&self, address: &str) -> Vec<TXOutput> {
         let mut utxos = Vec::<TXOutput>::new();
         let unspend_TXs = self.find_unspent_transactions(address);
-        for tx in unspend_TXs{
+        for tx in unspend_TXs {
             for out in &tx.vout{
                 if out.can_be_unlock_with(&address){
                     utxos.push(out.clone());
